@@ -1,0 +1,505 @@
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+body {
+    margin: 0;
+    background: #f7f7fa;
+}
+
+.main-layout {
+    min-height: 100vh;
+    background: #f7f7fa;
+}
+
+.main-content {
+    margin-left: 240px;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.dashboard-sidebar .MuiDrawer-paper {
+    width: 240px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-right: 1px solid #eeeeee;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    min-height: 80px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    display: flex !important;
+    align-items: center;
+}
+
+.sidebar-logo-title {
+    font-size: 25px;
+    font-weight: 800;
+
+    color: #7b4f79;
+}
+
+.sidebar-logo-subtitle {
+    font-size: 11px;
+    color: #888888;
+
+    margin-top: 2px;
+}
+
+.sidebar-list {
+    padding: 18px 12px !important;
+
+    flex: 1;
+}
+
+.sidebar-list .MuiListItemButton-root {
+    border-radius: 10px;
+
+    margin-bottom: 6px;
+
+    padding: 11px 14px;
+}
+
+.sidebar-list .MuiListItemButton-root:hover {
+    background: #f5edf4;
+}
+
+.sidebar-list .MuiListItemIcon-root {
+    min-width: 40px;
+
+    color: #777777;
+}
+
+.sidebar-logout {
+    padding: 18px;
+    border-top: 1px solid #eeeeee;
+}
+
+.sidebar-logout button {
+    width: 100%;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.dashboard-header {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 22px 26px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.dashboard-title {
+    font-weight: 700 !important;
+    color: #29262b;
+}
+
+.dashboard-subtitle {
+    color: #858189;
+
+    font-size: 14px !important;
+
+    margin-top: 4px !important;
+}
+
+.dashboard-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.dashboard-user-info {
+    text-align: right;
+}
+
+.dashboard-user-name {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.dashboard-user-role {
+    font-size: 12px !important;
+    color: #888888;
+}
+
+.dashboard-avatar {
+    background: #7b4f79 !important;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.dashboard-section {
+    margin-top: 30px;
+}
+
+.section-main-title {
+    font-weight: 700 !important;
+
+    color: #29262b;
+
+    margin-bottom: 16px !important;
+}
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.dashboard-stat-card {
+    height: 100%;
+
+    border-radius: 16px !important;
+
+    border: 1px solid #eeeeee !important;
+
+    box-shadow: none !important;
+
+    transition: all 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+.stat-card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+}
+
+.stat-title {
+    color: #858189 !important;
+
+    font-size: 13px !important;
+}
+
+.stat-value {
+    color: #29262b !important;
+
+    font-size: 30px !important;
+
+    font-weight: 700 !important;
+
+    margin-top: 6px !important;
+}
+
+.stat-subtitle {
+    color: #8c8c8c !important;
+
+    font-size: 12px !important;
+
+    margin-top: 5px !important;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5edf4;
+
+    color: #7b4f79;
+}
+
+/* =========================================
+   CHART CARDS
+========================================= */
+
+.dashboard-chart-card,
+.dashboard-table-card,
+.leave-card {
+    height: 100%;
+
+    border-radius: 16px !important;
+
+    border: 1px solid #eeeeee !important;
+
+    box-shadow: none !important;
+}
+
+.chart-title {
+    font-weight: 700 !important;
+}
+
+.chart-subtitle,
+.section-subtitle {
+    color: #888888 !important;
+
+    font-size: 13px !important;
+}
+
+.chart-container {
+    width: 100%;
+
+    height: 320px;
+
+    margin-top: 20px;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.section-heading h6 {
+    font-weight: 700;
+}
+
+.view-all {
+    color: #7b4f79 !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   EMPLOYEE TABLE
+========================================= */
+
+.dashboard-table {
+    margin-bottom: 0 !important;
+}
+
+.dashboard-table th {
+    color: #888888;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.dashboard-table td {
+    padding: 15px 10px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #f1f1f1;
+
+    font-size: 13px;
+}
+
+.employee-cell {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+}
+
+.employee-cell .MuiAvatar-root {
+    width: 34px;
+    height: 34px;
+
+    font-size: 13px;
+
+    background: #f0e6ef;
+
+    color: #7b4f79;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-active {
+    background: #e8f6ed !important;
+
+    color: #27824c !important;
+}
+
+.status-leave {
+    background: #fff3e6 !important;
+
+    color: #b56b20 !important;
+}
+
+.status-approved {
+    background: #e8f6ed !important;
+
+    color: #27824c !important;
+}
+
+.status-pending {
+    background: #fff3e6 !important;
+
+    color: #b56b20 !important;
+}
+
+/* =========================================
+   LEAVE REQUESTS
+========================================= */
+
+.leave-request {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.leave-request:last-child {
+    border-bottom: none;
+}
+
+.leave-name {
+    font-size: 14px !important;
+
+    font-weight: 600 !important;
+}
+
+.leave-details {
+    color: #888888 !important;
+
+    font-size: 12px !important;
+
+    margin-top: 3px !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .main-content {
+        margin-left: 200px;
+
+        padding: 22px;
+    }
+
+    .dashboard-sidebar .MuiDrawer-paper {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        margin-left: 0;
+
+        padding: 15px;
+    }
+
+    .dashboard-header {
+        padding: 18px;
+
+        align-items: flex-start;
+    }
+
+    .dashboard-user-info {
+        display: none;
+    }
+
+    .dashboard-title {
+        font-size: 26px !important;
+    }
+
+    .chart-container {
+        height: 270px;
+    }
+
+    .dashboard-table th:nth-child(3),
+    .dashboard-table td:nth-child(3) {
+        display: none;
+    }
+}
+
+/* =========================================
+   MOBILE SIDEBAR
+========================================= */
+
+.mobile-menu-button {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+
+    /* Hide hamburger on desktop, show on mobile */
+    .mobile-menu-button {
+        display: flex !important;
+
+        position: fixed;
+
+        top: 12px;
+        left: 12px;
+
+        z-index: 1300;
+
+        background: #ffffff !important;
+
+        border: 1px solid #e5e7eb !important;
+
+        border-radius: 8px !important;
+    }
+
+    /* Main content uses full width on mobile */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Mobile drawer width */
+    .dashboard-sidebar .MuiDrawer-paper {
+        width: 240px;
+
+        box-sizing: border-box;
+    }
+}

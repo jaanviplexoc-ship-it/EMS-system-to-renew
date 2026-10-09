@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #f6f8fc;
+    color: #20283a;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.employee-form {
+    width: 100%;
+}
+
+.employee-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.employee-name-cell strong {
+    display: block;
+    font-size: 13px;
+}
+
+.employee-name-cell small {
+    display: block;
+    color: #8b92a3;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-responsive table {
+    min-width: 650px;
+}
+
+@media (max-width: 600px) {
+    .page-heading h4 {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,400 @@
+/* =========================================
+   EMPLOYEES PAGE
+========================================= */
+
+.employees-page {
+    width: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.employees-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.employees-title {
+    font-size: 30px !important;
+
+    font-weight: 700 !important;
+
+    color: #242126 !important;
+}
+
+.employees-subtitle {
+    margin-top: 5px !important;
+
+    font-size: 13px !important;
+
+    color: #8b878d !important;
+}
+
+.add-employee-button {
+    background: #7b4f79 !important;
+
+    text-transform: none !important;
+
+    border-radius: 8px !important;
+
+    box-shadow: none !important;
+
+    font-size: 13px !important;
+
+    padding: 9px 16px !important;
+}
+
+.add-employee-button:hover {
+    background: #693f67 !important;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.employees-stats {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   TABLE CARD
+========================================= */
+
+.employees-table-card {
+    width: 100%;
+
+    border-radius: 12px !important;
+
+    border: 1px solid #e9e9e9 !important;
+
+    box-shadow: none !important;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.employee-table-header {
+    min-height: 64px;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.employee-table-title {
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    color: #28252a !important;
+
+    white-space: nowrap;
+}
+
+.employee-table-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.employee-search {
+    height: 34px;
+
+    width: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 10px;
+
+    border: 1px solid #e2e2e2;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+}
+
+.employee-search svg {
+    font-size: 17px;
+
+    color: #999999;
+}
+
+.employee-search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 11px;
+
+    color: #444444;
+
+    background: transparent;
+}
+
+.employee-search input::placeholder {
+    color: #aaa;
+}
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+.filter-button {
+    height: 34px !important;
+
+    border-color: #e0e0e0 !important;
+
+    color: #555 !important;
+
+    text-transform: none !important;
+
+    font-size: 11px !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   TABLE ADD BUTTON
+========================================= */
+
+.table-add-button {
+    height: 34px !important;
+
+    background: #7b4f79 !important;
+
+    text-transform: none !important;
+
+    font-size: 11px !important;
+
+    border-radius: 6px !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.employee-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.employee-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 950px;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.employee-table thead {
+    background: #ffffff;
+}
+
+.employee-table th {
+    height: 38px;
+
+    padding: 0 8px;
+
+    text-align: left;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    color: #888888;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* =========================================
+   TABLE BODY
+========================================= */
+
+.employee-table td {
+    height: 48px;
+
+    padding: 0 8px;
+
+    white-space: nowrap;
+
+    font-size: 10px;
+
+    color: #555158;
+
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.employee-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.employee-table tbody tr:hover {
+    background: #faf8fa;
+}
+
+.employee-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.checkbox-column {
+    width: 35px;
+}
+
+.employee-table .MuiCheckbox-root {
+    padding: 4px;
+}
+
+
+/* =========================================
+   EMPLOYEE NAME
+========================================= */
+
+.employee-name-cell {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 500;
+
+    color: #29262b;
+}
+
+.employee-name-cell .MuiAvatar-root {
+    width: 26px;
+
+    height: 26px;
+
+    font-size: 10px;
+
+    background: #e9e0e8;
+
+    color: #7b4f79;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.employee-status {
+    height: 21px !important;
+
+    border-radius: 12px !important;
+
+    font-size: 9px !important;
+
+    font-weight: 500 !important;
+}
+
+.employee-status.active {
+    background: #eaf8f0 !important;
+
+    color: #24945a !important;
+}
+
+.employee-status.inactive {
+    background: #fdeeee !important;
+
+    color: #e05252 !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .employee-table-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .employee-table-actions {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .employees-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .employees-title {
+        font-size: 26px !important;
+    }
+
+    .employee-table-actions {
+        width: 100%;
+    }
+
+    .employee-search {
+        flex: 1;
+    }
+
+}
