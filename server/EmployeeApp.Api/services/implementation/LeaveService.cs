@@ -72,7 +72,7 @@ public class LeaveService : ILeaveService
             "Other"
         };
 
-        var leaveType = dto.LeaveType.Trim();
+    var leaveType = dto.LeaveType.Trim();
 
         if (!allowedLeaveTypes.Contains(
                 leaveType,

@@ -36,4 +36,7 @@ public class CreateEmployeeDto
     public string? State { get; set; }
     public string? Country { get; set; }
     public string? Pincode { get; set; }
+
+    [Required]
+    public string Role { get; set; } = string.Empty;
 }

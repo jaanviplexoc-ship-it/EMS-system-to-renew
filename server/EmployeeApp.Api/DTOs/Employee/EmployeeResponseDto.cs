@@ -23,4 +23,5 @@ public class EmployeeResponseDto
     public string? State { get; set; }
     public string? Country { get; set; }
     public string? Pincode { get; set; }
+    public string? Role { get; set; }
 }

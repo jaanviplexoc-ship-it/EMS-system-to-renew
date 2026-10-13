@@ -149,11 +149,19 @@ namespace EmployeeApp.Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Pincode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Salary")
@@ -217,41 +225,6 @@ namespace EmployeeApp.Api.Migrations
                     b.ToTable("LeaveRequests");
                 });
 
-            modelBuilder.Entity("EmployeeApp.Api.models.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserId");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
-
-                    b.HasIndex("EmployeeId")
-                        .IsUnique()
-                        .HasFilter("[EmployeeId] IS NOT NULL");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("EmployeeApp.Api.models.Attendance", b =>
                 {
                     b.HasOne("EmployeeApp.Api.models.Employee", "Employee")
@@ -272,21 +245,6 @@ namespace EmployeeApp.Api.Migrations
                         .IsRequired();
 
                     b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("EmployeeApp.Api.models.User", b =>
-                {
-                    b.HasOne("EmployeeApp.Api.models.Employee", "Employee")
-                        .WithOne("User")
-                        .HasForeignKey("EmployeeApp.Api.models.User", "EmployeeId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Employee");
-                });
-
-            modelBuilder.Entity("EmployeeApp.Api.models.Employee", b =>
-                {
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

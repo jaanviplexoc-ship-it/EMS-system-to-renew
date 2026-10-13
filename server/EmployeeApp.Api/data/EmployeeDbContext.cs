@@ -13,7 +13,6 @@ namespace EmployeeApp.Api.data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Designation> Designations { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<LeaveRequest> LeaveRequests { get; set; }
 
@@ -30,25 +29,25 @@ namespace EmployeeApp.Api.data
                 .HasIndex(e => e.Email)
                 .IsUnique();
 
-            //users email must be unique
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.Email)
-                .IsUnique();
+            ////users email must be unique
+            //modelBuilder.Entity<User>()
+            //    .HasIndex(u => u.Email)
+            //    .IsUnique();
 
             //one employee can have maximum one user.
             //NULL values are not allowed for users which are not linked to an Employee yet
 
-            modelBuilder.Entity<User>()
-                .HasIndex(u => u.EmployeeId)
-                .IsUnique()
-                .HasFilter("[EmployeeId] IS NOT NULL");
+            //modelBuilder.Entity<User>()
+            //    //.HasIndex(u => u.EmployeeId)
+            //    //.IsUnique()
+            //    .HasFilter("[EmployeeId] IS NOT NULL");
 
-            //Employee 1 : 0...1 User
-            modelBuilder.Entity<Employee>()
-                .HasOne(e => e.User)
-                .WithOne(u => u.Employee)
-                .HasForeignKey<User>(u => u.EmployeeId)
-                .OnDelete(DeleteBehavior.Restrict);
+            ////Employee 1 : 0...1 User
+            //modelBuilder.Entity<Employee>()
+            //    .HasOne(e => e.User)
+            //    .WithOne(u => u.Employee)
+            //    .HasForeignKey<User>(u => u.EmployeeId)
+            //    .OnDelete(DeleteBehavior.Restrict);
 
             // Attendance relationship
             modelBuilder.Entity<Attendance>()

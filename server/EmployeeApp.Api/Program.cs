@@ -206,10 +206,10 @@ builder.Services.AddScoped<
 // Password Hasher
 // ===============================
 
-builder.Services.AddScoped<PasswordHasher<User>>();
-
+builder.Services.AddScoped<PasswordHasher<Employee>>();
 
 var app = builder.Build();
+
 app.UseExceptionHandler();
 
 

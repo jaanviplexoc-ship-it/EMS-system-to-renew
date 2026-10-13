@@ -14,12 +14,12 @@ public class AuthService : IAuthService
 {
     private readonly EmployeeDbContext _context;
     private readonly IConfiguration _configuration;
-    private readonly PasswordHasher<User> _passwordHasher;
+    private readonly PasswordHasher<Employee> _passwordHasher;
 
     public AuthService(
         EmployeeDbContext context,
         IConfiguration configuration,
-        PasswordHasher<User> passwordHasher)
+        PasswordHasher<Employee> passwordHasher)
     {
         _context = context;
         _configuration = configuration;
@@ -28,7 +28,7 @@ public class AuthService : IAuthService
 
     public async Task<string?> LoginAsync(LoginDto loginDto)
     {
-        var user = await _context.Users
+        var user = await _context.Employees
             .FirstOrDefaultAsync(u => u.Email == loginDto.Email);
 
         if (user == null)
@@ -37,14 +37,17 @@ public class AuthService : IAuthService
         }
 
         var passwordResult =
-            _passwordHasher.VerifyHashedPassword(
-                user,
-                user.PasswordHash,
-                loginDto.Password
-            );
+          _passwordHasher.VerifyHashedPassword(
+              user,
+              user.PasswordHash,
+              loginDto.Password
+          );
+
+        Console.WriteLine($"Password verification result: {passwordResult}");
 
         if (passwordResult == PasswordVerificationResult.Failed)
         {
+            Console.WriteLine("Password does not match the stored hash.");
             return null;
         }
 
@@ -52,7 +55,7 @@ public class AuthService : IAuthService
         {
             new Claim(
                 ClaimTypes.NameIdentifier,
-                user.UserId.ToString()
+                user.EmployeeId.ToString()
             ),
 
             new Claim(
@@ -65,16 +68,6 @@ public class AuthService : IAuthService
                 user.Role
             )
         };
-
-        if (user.EmployeeId.HasValue)
-        {
-            claims.Add(
-                new Claim(
-                    "EmployeeId",
-                    user.EmployeeId.Value.ToString()
-                )
-            );
-        }
 
         var jwtKey = _configuration["Jwt:Key"];
 
@@ -101,14 +94,15 @@ public class AuthService : IAuthService
             SecurityAlgorithms.HmacSha256
         );
 
-        var now = DateTime.UtcNow;
+        var time = DateTime.UtcNow;
 
-        var token = new JwtSecurityToken(
-            issuer: issuer,
+        var token = new JwtSecurityToken( 
+            //named argument 
+            issuer: issuer, //-> parameter_name : variable_name 
             audience: audience,
             claims: claims,
-            notBefore: now,
-            expires: now.AddMinutes(expirationMinutes),
+            notBefore: time,
+            expires: time.AddMinutes(expirationMinutes),
             signingCredentials: credentials
         );
 

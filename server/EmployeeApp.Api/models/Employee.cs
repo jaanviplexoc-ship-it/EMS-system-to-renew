@@ -20,7 +20,8 @@ namespace EmployeeApp.Api.models
         public string? State { get; set; }
         public string? Country { get; set; }
         public string? Pincode { get; set; }
-        public User? User { get; set; }
+        public string PasswordHash { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
     }
 
 }

@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert, MenuItem, TextField } from "@mui/material";
+import { Alert } from "@mui/material";
 import { jwtDecode } from "jwt-decode";
 
 import LoginFields from "../molecules/LoginFields";
@@ -12,7 +12,6 @@ import { useAuth } from "../../context/AuthContext";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedRole, setSelectedRole] = useState("Employee");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -53,14 +52,6 @@ export default function LoginForm() {
 
       if (!actualRole || !expiration || expiration * 1000 <= Date.now()) {
         setError("The server returned an invalid or expired token.");
-        return;
-      }
-
-      // The dropdown checks the role; it does not assign the role.
-      if (actualRole !== selectedRole) {
-        setError(
-          `This account has the ${actualRole} role. Select that role to continue.`
-        );
         return;
       }
 
@@ -106,18 +97,6 @@ export default function LoginForm() {
         setEmail={setEmail}
         setPassword={setPassword}
       />
-
-      <TextField
-        select
-        fullWidth
-        label="Login as"
-        value={selectedRole}
-        onChange={(event) => setSelectedRole(event.target.value)}
-        margin="normal"
-      >
-        <MenuItem value="Admin">Admin</MenuItem>
-        <MenuItem value="Employee">Employee</MenuItem>
-      </TextField>
 
       <div className="login-button">
         <PrimaryButton
